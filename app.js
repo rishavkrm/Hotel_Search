@@ -41,7 +41,7 @@ app.post("/search", function(req, res){
 
               }
   console.log('apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date='+arrival_date+'&departure_date='+departure_date+'&guest_qty=1&dest_ids=-3712125&room_qty=1&search_type=city&children_qty=2&children_age=5%2C7&search_id=none&price_filter_currencycode=USD&order_by=popularity&languagecode=en-us&travel_purpose=leisure')
-  const options = {method: 'GET',headers: {'X-RapidAPI-Key': '1584652a63msh7dd290cb53142f3p181fe3jsna350b1f9281a','X-RapidAPI-Host': 'apidojo-booking-v1.p.rapidapi.com'}};
+  const options = {method: 'GET',headers: {'X-RapidAPI-Key': process.env.XRapidAPIKey,'X-RapidAPI-Host': process.env.XRapidAPIHost}};
   fetch('https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date='+arrival_date+'&departure_date='+departure_date+'&guest_qty='+n_guests+'&dest_ids=-3712125&room_qty=1&search_type=city&children_qty=2&children_age=5%2C7&search_id=none&price_filter_currencycode=USD&order_by=popularity&languagecode=en-us&travel_purpose=leisure', options)
   .then(response => response.json())
             .then(response =>   
@@ -84,8 +84,8 @@ app.get("/hotels/:hotelId", function(req, res){
       const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': '1584652a63msh7dd290cb53142f3p181fe3jsna350b1f9281a',
-          'X-RapidAPI-Host': 'apidojo-booking-v1.p.rapidapi.com'
+          'X-RapidAPI-Key': process.env.XRapidAPIKey,
+          'X-RapidAPI-Host': process.env.XRapidAPIHost
         }
       };
       
