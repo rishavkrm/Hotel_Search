@@ -12,5 +12,5 @@ You will be redirected to home route and your experiences will be added.\
 On the home page, click on FIND HOTELS button to go to /search route.\
 Enter number of visitors, arrival date and departure date to get results.\
 You will be redirected to /results route and fetched results will be shown\
-###Checkout a perticular hotel
+## Checkout a perticular hotel
 After getting results on /results route click on show more to get more detail, description and photos of the hotel\
