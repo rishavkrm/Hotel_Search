@@ -1,0 +1,20 @@
+
+<%- include("partials/header"); -%>
+    <h1>Hotels Found: </h1>
+    <p> </p>
+
+
+  <%  hotels.forEach(function(hotel){ %>
+
+    <h3><%=hotel.hotelName%></h1>
+    <h4><%=hotel.address%></h4>
+    <h4><%=hotel.country%></h4>
+
+    <p><a href="/hotels/<%=hotel.hotelId%>">Click for more</a>
+    </p>
+
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>

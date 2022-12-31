@@ -1,0 +1,16 @@
+
+<%- include("partials/header"); -%>
+    <h1>Compose</h1>
+    <form class="" action="/search" method="post">
+      <div class="form-group">
+        <label>Number of Guests</label>
+        <input class="form-control" type="text" name="n_guests">
+        <label>Arrival date</label>
+        <input class="form-control" type="text" name="arrival_date" placeholder="YYYY-DD-MM">
+        <label>Departure date</label>
+        <input class="form-control" name="departure_date" placeholder="YYYY-DD-MM"></input>
+      </div>
+      <button class="btn btn-primary" type="submit" name="button">Search</button>
+    </form>
+
+<%- include("partials/footer"); -%>
