@@ -81,6 +81,20 @@ app.get("/hotels/:hotelId", function(req, res){
        
     if (storedTitle == requestedTitle) {
       console.log("YES! Found one")
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': '1584652a63msh7dd290cb53142f3p181fe3jsna350b1f9281a',
+          'X-RapidAPI-Host': 'apidojo-booking-v1.p.rapidapi.com'
+        }
+      };
+      
+      fetch('https://apidojo-booking-v1.p.rapidapi.com/properties/get-description?hotel_ids='+requestedTitle+'&check_out=2019-03-15&languagecode=en-us&check_in=2019-03-13', options)
+        .then(response => response.json())
+        .then(response => {
+          description = response[0].description
+        })
+        .catch(err => console.error(err));
       fetch('https://apidojo-booking-v1.p.rapidapi.com/properties/get-hotel-photos?hotel_ids='+requestedTitle+'&languagecode=en-us', options)
       .then(response => response.json())
       .then(response => {
@@ -94,7 +108,8 @@ app.get("/hotels/:hotelId", function(req, res){
         hotelId:hotel.hotelId,
         country:hotel.country,
         photo1:photo1,
-        photo2:photo2
+        photo2:photo2,
+        description:description
       });
       })
       .catch(err => console.error(err));
